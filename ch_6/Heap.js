@@ -5,7 +5,6 @@ class Heap {
 
     constructor() {
         this.heap
-        this.sorted = []
         this.min = false
         this.max = false
     }
@@ -19,6 +18,9 @@ class Heap {
     }
 
     parent(i) {
+        if(i == 0){
+            return null
+        }
         return Math.floor(i / 2)
     }
 
@@ -55,6 +57,7 @@ class Heap {
         this.min = true
     }
 
+    // O(lgn)
     max_heapify(i) {
         let L = this.left(i)
         let R = this.right(i)
@@ -127,42 +130,16 @@ class Heap {
         }
     }
 
-    _switchFirstAndLast(){
-        let tmp = this.heap[0]
-        this.heap[0] = this.heap[this.size() - 1]
-        this.heap[this.size() - 1] = tmp
-    }
-
-    heap_sort(A){
-        // first populate the output array
-        for(let i=0; i < A.length; i++){
-            this.sorted.push(A[i])
-        }
-        let n = A.length - 1
-        this.build_max_heap(A)
-        while(n >= 0){
-            this._switchFirstAndLast()
-            this.sorted[n] = this.heap.pop()
-            this.max_heapify(0)
-            n--
-        }
-
+    switchItems(i, n){
+        let tmp = this.heap[i]
+        this.heap[i] = this.heap[n]
+        this.heap[n] = tmp
     }
 
     printHeap() {
         console.log(chalk.green(this.min ? `min heap : ${this.heap}` : `max heap : ${this.heap}`))
     }
 
-    printHeapSort(){
-        console.log(chalk.green(this.sorted))
-    }
 }
 
-let h = new Heap()
-let A = Utils.randomArray(1000000)
-// h.build_max_heap([5,3,17,10,84,19,6,22,9])
-// h.print()
-console.time('HEAP SORT : ')
-h.heap_sort(A)
-console.timeEnd('HEAP SORT : ')
-// h.printHeapSort()
+module.exports = Heap
