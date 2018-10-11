@@ -51,13 +51,14 @@ class MinPriorityQueue extends Heap {
 }
 
 
-const h = new MinPriorityQueue(A)
-h.printHeap()
-try {
-    h.heap_decrease_key(3, -3)
-} catch (e) {
-    console.error(chalk.red(e))
-}
-// h.min_heap_insert(9)
-h.printHeap()
+module.exports = MinPriorityQueue
+// const h = new MinPriorityQueue(A)
+// h.printHeap()
+// try {
+//     h.heap_decrease_key(3, -3)
+// } catch (e) {
+//     console.error(chalk.red(e))
+// }
+// // h.min_heap_insert(9)
+// h.printHeap()
 

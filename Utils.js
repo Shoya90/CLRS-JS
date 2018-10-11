@@ -4,7 +4,7 @@ util = {}
 util.randomArray = (n) => {
     A = []
     for (var i = 0; i < n; i++) {
-        A.push(Math.floor(Math.random() * n + 1))
+        A.push(Math.floor(Math.random() * 100))
     }
     return A
 }

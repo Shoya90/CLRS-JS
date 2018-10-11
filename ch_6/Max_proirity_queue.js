@@ -65,24 +65,27 @@ class MaxPriorityQueue extends Heap {
 
     // Excercise 6-5.7 
     max_heap_delete(i){
-        if(i >= this.size()){
+        if(i >= this.size() || i < 0){
             throw new Error('Index out of range')
         }
         this.switchItems(i,this.size() - 1)
         this.heap.pop()
         this.max_heapify(i)
     }
+
 }
 
 
-const h = new MaxPriorityQueue(A)
-h.printHeap()
-// try {
-//     h.heap_increase_key2(7, 20)
-// } catch (e) {
-//     console.error(chalk.red(e))
-// }
-h.max_heap_delete(0)
-// h.max_heap_insert(9)
-h.printHeap()
+
+
+// const h = new MaxPriorityQueue(A)
+// h.printHeap()
+// // try {
+// //     h.heap_increase_key2(7, 20)
+// // } catch (e) {
+// //     console.error(chalk.red(e))
+// // }
+// h.max_heap_delete(0)
+// // h.max_heap_insert(9)
+// h.printHeap()
 
