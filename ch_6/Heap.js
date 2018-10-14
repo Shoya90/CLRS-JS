@@ -9,10 +9,12 @@ class Heap {
         this.max = false
     }
 
+    // 2i
     left(i) {
         return (i + 1) * 2 - 1
     }
 
+    // 2i + 1
     right(i) {
         return (i + 1) * 2
     }
@@ -28,6 +30,7 @@ class Heap {
         return this.heap.length
     }
 
+    // longest distance from this node to a leaf
     height(i) {
         let h = 0
         let j = i
@@ -39,6 +42,7 @@ class Heap {
         return h
     }
 
+    // O(n)
     build_max_heap(A){
         this.heap = A
         // run max_heapify for all non-leaf nodes
@@ -72,9 +76,7 @@ class Heap {
             largest = R
         }
         if (largest !== i) {
-            let tmp = this.heap[i]
-            this.heap[i] = this.heap[largest]
-            this.heap[largest] = tmp
+            this.switchItems(i, largest)
             this.max_heapify(largest)
         }
     }
@@ -86,20 +88,17 @@ class Heap {
         let j = i
         let largest
         while (this.heap[L] >= this.heap[j] || this.heap[R] >= this.heap[j]) {
-            if (L <= this.size() && this.heap[L] >= this.heap[j]) {
+            if (L <= this.size() && this.heap[L] > this.heap[j]) {
                 largest = L
             }
             else {
                 largest = j
             }
-            if (R <= this.size() && this.heap[R] >= this.heap[largest]) {
+            if (R <= this.size() && this.heap[R] > this.heap[largest]) {
                 largest = R
             }
             if (largest !== j) {
-                let tmp = this.heap[j]
-                this.heap[j] = this.heap[largest]
-                this.heap[largest] = tmp
-
+                this.switchItems(i, largest)
                 // update values for the next iteration
                 j = largest
                 L = this.left(j)

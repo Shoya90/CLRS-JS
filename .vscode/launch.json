@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/ch_6/Ex_6_5_9_merge_sorted_lists.js"
+            "program": "${workspaceFolder}/ch_7/randomized_quicksort.js"
         }
     ]
 }
