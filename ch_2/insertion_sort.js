@@ -12,6 +12,7 @@ insertion_sort = (A) => {
     }
 }
 
-require('../Utils').AlgorithmInfoLog(insertion_sort, [require('./Utils').randomArray(100000), 1, 100000], false)
+// require('../Utils').AlgorithmInfoLog(insertion_sort, [require('./Utils').randomArray(100000), 1, 100000], false)
+module.exports = insertion_sort
 
 
