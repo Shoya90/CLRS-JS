@@ -9,6 +9,14 @@ util.randomArray = (n) => {
     return A
 }
 
+util.randomArrayBetweenRangeString = (from, to, n) => {
+    A = []
+    for (var i = 0; i < n; i++) {
+        A.push(String(Math.floor(Math.random() * (to - from)) + from))
+    }
+    return A
+}
+
 util.randomArrayWithNegatives = (to) => {
     A = []
     for (let i = 0; i < to; i++) {

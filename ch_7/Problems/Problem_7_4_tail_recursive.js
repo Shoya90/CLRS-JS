@@ -25,5 +25,5 @@ const tail_recursive_quicksort = (A, p, r) => {
     }
 }
 
-
+A =[93,93,91,95,92,90,82,57,67,94]
 utils.AlgorithmInfoLog(tail_recursive_quicksort, [A, 0, A.length - 1], true)

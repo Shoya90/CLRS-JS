@@ -1,5 +1,5 @@
 const utils = require('../Utils')
-let A = util.randomArray(15)
+let A = util.randomArray(50000)
 
 // worst case 0(n^2)
 // average 0(nlog(n))
@@ -27,4 +27,4 @@ const quicksort = (A, p, r) => {
 }
 
 
-utils.AlgorithmInfoLog(quicksort, [A, 0, A.length - 1], true)
+utils.AlgorithmInfoLog(quicksort, [A, 0, A.length - 1], false)
