@@ -32,6 +32,10 @@ const randomized_quicksort = (A, p, r) => {
     }
 }
 
+module.exports = {
+    randomized_partition: randomized_partition,
+    randomized_quicksort : randomized_quicksort
+}
 
 // quicksort(0, A.length - 1)
-utils.AlgorithmInfoLog(randomized_quicksort, [A, 0, A.length - 1], false)
+// utils.AlgorithmInfoLog(randomized_quicksort, [A, 0, A.length - 1], false)

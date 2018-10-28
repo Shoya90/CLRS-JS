@@ -12,7 +12,18 @@ insertion_sort = (A) => {
     }
 }
 
-// require('../Utils').AlgorithmInfoLog(insertion_sort, [require('./Utils').randomArray(100000), 1, 100000], false)
-module.exports = insertion_sort
+require('../Utils').AlgorithmInfoLog(insertion_sort, [require('../Utils').randomArray(200000), 1, 200000], false)
+// module.exports = insertion_sort
 
+// 100k     time (micro secs)
+// c++ .... 7933582 DEBUG
+// c++ .... 1423482 RELEASE
+// js  .... 6552189
 
+// 200k
+// c++ .... 31863479 DEBUG
+// c++ .... 5741924  RELEASE
+// js  .... 26036010
+
+// javascript beats c++ (debug)
+// c++ (release) crushes javascript
