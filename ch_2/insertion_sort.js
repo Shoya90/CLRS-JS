@@ -3,7 +3,7 @@ insertion_sort = (A) => {
         key = A[j]
         // insert A[j] into the sorted sub sequence A[0,...,j-1]
         i = j - 1
-        while(i >= 0 && A[i] < key){
+        while(i >= 0 && A[i] > key){
             // copy each element to its right position
             A[i + 1] = A[i]
             i -= 1

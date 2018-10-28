@@ -27,6 +27,18 @@ util.randomArrayWithNegatives = (to) => {
     return A
 }
 
+util.randomArrayBetween0And1 = (n) => {
+    A = []
+    for (let i = 0; i < n; i++) {
+        let num = Math.random()
+        while(num == 1){
+            num = Math.random()
+        }
+        A.push(num)
+    }
+    return A
+}
+
 util.AlgorithmInfoLog = (algorithm, A, print_array = true, print_time = true, print_memory = true) => {
     print_array && console.log(chalk.blue([A[0]]))
     print_time && console.time(algorithm.name)
