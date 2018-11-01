@@ -12,13 +12,15 @@ insertion_sort = (A) => {
     }
 }
 
-require('../Utils').AlgorithmInfoLog(insertion_sort, [require('../Utils').randomArray(200000), 1, 200000], false)
+const A = Uint32Array.from(require('../Utils').randomArray(100000))
+require('../Utils').AlgorithmInfoLog(insertion_sort, [A, 1, 100000], false)
 // module.exports = insertion_sort
 
 // 100k     time (micro secs)
 // c++ .... 7933582 DEBUG
 // c++ .... 1423482 RELEASE
-// js  .... 6552189
+// js  .... 6552189 un-typed array
+// js  .... 6392074 Uint32Array
 
 // 200k
 // c++ .... 31863479 DEBUG
