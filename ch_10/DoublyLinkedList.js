@@ -1,5 +1,5 @@
 
-class LinkedList {
+class DoublyLinkedList {
     constructor(){
         this.list = []
         this.head = this._listItem()
@@ -7,6 +7,14 @@ class LinkedList {
 
     size(){
         return this.list.length
+    }
+
+    search(key){
+        let x = this.head
+        while(x && x.key != key){
+            x = x.next
+        }
+        return x
     }
 
     insert(key){
@@ -19,7 +27,17 @@ class LinkedList {
 
         this.head.next = x
         x.prev = this.head
-        this.list.push(x)
+        this.list.unshift(x)
+    }
+
+    delete(key){
+        let x = this.search(key)
+        
+        x.prev.next = x.next
+        if(x.next)
+            x.next.prev = x.prev
+            
+        this.list.splice(this.list.indexOf(x) ,1)
     }
 
     _listItem(prev = null, key = null, next = null){
@@ -37,11 +55,13 @@ class LinkedList {
 }
 
 
-let ll = new LinkedList()
+let ll = new DoublyLinkedList()
 
 ll.insert(1)
 ll.insert(4)
 ll.insert(5)
-console.log(ll.list[2].prev.key);
-
+ll.insert(56)
+ll.insert(10)
+ll.insert(34)
+ll.delete(1)
 ll.printList()
