@@ -54,15 +54,15 @@ class SinglyLinkedList {
 
 }
 
+module.exports = SinglyLinkedList
+// let ll = new SinglyLinkedList()
 
-let ll = new SinglyLinkedList()
-
-ll.insert(1)
-ll.insert(4)
-ll.insert(5)
-ll.insert(56)
-ll.insert(10)
-ll.insert(34)
-ll.printList()
-ll.delete(1)
-ll.printList()
+// ll.insert(1)
+// ll.insert(4)
+// ll.insert(5)
+// ll.insert(56)
+// ll.insert(10)
+// ll.insert(34)
+// ll.printList()
+// ll.delete(1)
+// ll.printList()

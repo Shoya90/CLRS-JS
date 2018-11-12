@@ -27,9 +27,9 @@ const counting_sort = (A, k) => {
 
 }
 
-// let A = utils.randomArray(20)
+let A = utils.randomArray(20)
 // let A = [2, 5, 3, 0, 2, 3, 0, 3, 11, 90, 4, 1]
-// utils.AlgorithmInfoLog(counting_sort, [A, 90], true)
-// console.log(counting_sort(A, 90))
+utils.AlgorithmInfoLog(counting_sort, [A, 90], true)
+console.log(counting_sort(A, 90))
 
 module.exports = counting_sort

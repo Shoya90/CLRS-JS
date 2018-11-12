@@ -59,7 +59,7 @@ try{
     q.enQueue(909)
     q.deQueue()
     q.enQueue(11)
-    q.enQueue(113)
+    // q.enQueue(113)
 }catch(e){
     console.log(e)
 }
